@@ -6,6 +6,7 @@ let
     "ghc6102Binary"
     "ghc704Binary"
     "ghc742Binary"
+    "ghc821Binary"
     "ghc6104"
     "ghc6123"
     "ghc704"
@@ -36,6 +37,10 @@ in rec {
     };
     ghc742Binary = callPackage ../development/compilers/ghc/7.4.2-binary.nix {
       gmp = pkgs.gmp4;
+    };
+    
+    ghc821Binary = callPackage ../development/compilers/ghc/8.2.1-binary.nix {
+      gmp = pkgs.gmp;
     };
 
     ghc6104 = callPackage ../development/compilers/ghc/6.10.4.nix { ghc = compiler.ghc6102Binary; };
